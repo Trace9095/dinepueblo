@@ -4,13 +4,19 @@ import Link from 'next/link'
 import { MapPin, Phone, Globe, Star, Clock, DollarSign, ArrowLeft, Award, ExternalLink, ChevronRight } from 'lucide-react'
 import { getRestaurantBySlug, getAllRestaurants, getRestaurantCategories } from '@/lib/db-helpers'
 
+export const dynamic = 'force-dynamic'
+
 interface PageProps {
   params: Promise<{ slug: string }>
 }
 
 export async function generateStaticParams() {
-  const restaurants = await getAllRestaurants()
-  return restaurants.map(r => ({ slug: r.slug }))
+  try {
+    const restaurants = await getAllRestaurants()
+    return restaurants.map(r => ({ slug: r.slug }))
+  } catch {
+    return []
+  }
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {

@@ -2,6 +2,8 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { MapPin, ArrowRight, Flame, Beer, UtensilsCrossed, Sunrise, Trophy } from 'lucide-react'
 import { getFeaturedRestaurants, getAllCategories } from '@/lib/db-helpers'
+
+export const dynamic = 'force-dynamic'
 import { RestaurantCard } from '@/components/restaurant/RestaurantCard'
 import { BlogCard } from '@/components/blog/BlogCard'
 import { getAllPosts } from '@/lib/blog-data'

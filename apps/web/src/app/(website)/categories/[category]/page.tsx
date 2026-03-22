@@ -5,11 +5,17 @@ import { ChevronRight, ArrowLeft } from 'lucide-react'
 import { getCategoryBySlug, getRestaurantsByCategory, getAllCategories } from '@/lib/db-helpers'
 import { RestaurantCard } from '@/components/restaurant/RestaurantCard'
 
+export const dynamic = 'force-dynamic'
+
 interface PageProps { params: Promise<{ category: string }> }
 
 export async function generateStaticParams() {
-  const cats = await getAllCategories()
-  return cats.map(c => ({ category: c.slug }))
+  try {
+    const cats = await getAllCategories()
+    return cats.map(c => ({ category: c.slug }))
+  } catch {
+    return []
+  }
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {

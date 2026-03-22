@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
 import { Suspense } from 'react'
 import { getAllRestaurants, getAllCategories } from '@/lib/db-helpers'
+
+export const dynamic = 'force-dynamic'
 import { RestaurantCard } from '@/components/restaurant/RestaurantCard'
 import { RestaurantFilters } from '@/components/restaurant/RestaurantFilters'
 import type { Restaurant } from '@/db/schema'
