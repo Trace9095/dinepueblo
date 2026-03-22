@@ -2,8 +2,10 @@ import type { MetadataRoute } from 'next'
 import { getAllRestaurants, getAllCategories } from '@/lib/db-helpers'
 import { getAllPosts } from '@/lib/blog-data'
 
+export const dynamic = 'force-dynamic'
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const [restaurants, categories] = await Promise.all([getAllRestaurants(), getAllCategories()])
+  const [restaurants, categories] = await Promise.allSettled([getAllRestaurants(), getAllCategories()])
   const posts = getAllPosts()
 
   const base = 'https://dinepueblo.com'
@@ -17,19 +19,23 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${base}/request-listing`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
   ]
 
-  const restaurantPages: MetadataRoute.Sitemap = restaurants.map(r => ({
-    url: `${base}/restaurants/${r.slug}`,
-    lastModified: r.updatedAt,
-    changeFrequency: 'weekly' as const,
-    priority: r.featured ? 0.9 : 0.8,
-  }))
+  const restaurantPages: MetadataRoute.Sitemap = restaurants.status === 'fulfilled'
+    ? restaurants.value.map(r => ({
+        url: `${base}/restaurants/${r.slug}`,
+        lastModified: r.updatedAt,
+        changeFrequency: 'weekly' as const,
+        priority: r.featured ? 0.9 : 0.8,
+      }))
+    : []
 
-  const categoryPages: MetadataRoute.Sitemap = categories.map(c => ({
-    url: `${base}/categories/${c.slug}`,
-    lastModified: now,
-    changeFrequency: 'weekly' as const,
-    priority: 0.7,
-  }))
+  const categoryPages: MetadataRoute.Sitemap = categories.status === 'fulfilled'
+    ? categories.value.map(c => ({
+        url: `${base}/categories/${c.slug}`,
+        lastModified: now,
+        changeFrequency: 'weekly' as const,
+        priority: 0.7,
+      }))
+    : []
 
   const blogPages: MetadataRoute.Sitemap = posts.map(p => ({
     url: `${base}/blog/${p.slug}`,
