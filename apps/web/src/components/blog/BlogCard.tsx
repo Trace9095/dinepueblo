@@ -11,12 +11,26 @@ export function BlogCard({ post }: { post: BlogPost }) {
       style={{ backgroundColor: '#161B22', borderColor: '#30363D' }}
     >
       <div className="h-48 overflow-hidden bg-[#21262D]">
-        <img
-          src={post.imageUrl}
-          alt={post.title}
-          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-          loading="lazy"
-        />
+        {post.imageUrl ? (
+          <img
+            src={post.imageUrl}
+            alt={post.title}
+            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+            loading="lazy"
+          />
+        ) : (
+          <div
+            className="w-full h-full flex items-center justify-center"
+            style={{ background: 'linear-gradient(135deg, #1a1200 0%, #21262D 100%)' }}
+          >
+            <span
+              className="text-xs font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full"
+              style={{ backgroundColor: '#D4A85320', color: '#D4A853' }}
+            >
+              {post.category}
+            </span>
+          </div>
+        )}
       </div>
       <div className="p-5">
         <span

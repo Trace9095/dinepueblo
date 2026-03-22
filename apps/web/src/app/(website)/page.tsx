@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { MapPin, ArrowRight, Flame, Beer, UtensilsCrossed, Sunrise, Trophy, Phone, ExternalLink, Mountain, Waves, Tent } from 'lucide-react'
+import { MapPin, ArrowRight, Flame, Beer, UtensilsCrossed, Sunrise, Trophy, ExternalLink } from 'lucide-react'
 import { getFeaturedRestaurants, getAllCategories } from '@/lib/db-helpers'
 
 export const dynamic = 'force-dynamic'
@@ -150,106 +150,23 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* Featured Partner Dining — Canon City */}
+      {/* Day Trips from Pueblo */}
       <section className="border-t" style={{ borderColor: '#30363D' }}>
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
-          <div className="flex items-center gap-2 mb-1">
-            <MapPin size={14} className="text-[#D4A853]" />
-            <span className="text-xs font-bold uppercase tracking-widest" style={{ color: '#D4A853' }}>Featured Partners</span>
-          </div>
-          <h2 className="text-2xl font-bold text-[#E6EDF3] mb-1">Dining 45 Minutes North — Canon City, CO</h2>
-          <p className="text-[#8B949E] mb-8">Two iconic restaurants just up the highway. Worth the drive.</p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-            <a
-              href="https://whitewaterbar.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group flex flex-col gap-3 rounded-2xl border p-6 transition-all hover:border-[#D4A853]/60"
-              style={{ backgroundColor: '#161B22', borderColor: '#30363D' }}
-            >
-              <div className="flex items-start justify-between">
-                <div>
-                  <p className="text-lg font-bold text-[#E6EDF3] group-hover:text-[#D4A853] transition-colors">WhiteWater Bar &amp; Grill</p>
-                  <p className="text-sm text-[#D4A853] mt-0.5">Undefeated Flavors. Legendary Portions.</p>
-                </div>
-                <ExternalLink size={16} className="text-[#8B949E] mt-1 flex-shrink-0" />
-              </div>
-              <p className="text-sm text-[#8B949E] leading-relaxed">Downtown Canon City&apos;s premier dining destination. Green chile, craft burgers, and Colorado-inspired dishes served in a lively atmosphere.</p>
-              <div className="flex flex-wrap items-center gap-4 text-xs text-[#8B949E]">
-                <span className="flex items-center gap-1"><MapPin size={11} className="text-[#D4A853]" /> Canon City, CO — 45 min north</span>
-                <span className="flex items-center gap-1"><Phone size={11} className="text-[#D4A853]" /> 719-451-7241</span>
-              </div>
-            </a>
-            <a
-              href="https://wwrooftopsocial.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group flex flex-col gap-3 rounded-2xl border p-6 transition-all hover:border-[#D4A853]/60"
-              style={{ backgroundColor: '#161B22', borderColor: '#30363D' }}
-            >
-              <div className="flex items-start justify-between">
-                <div>
-                  <p className="text-lg font-bold text-[#E6EDF3] group-hover:text-[#D4A853] transition-colors">Rooftop Social</p>
-                  <p className="text-sm text-[#D4A853] mt-0.5">Canon City&apos;s Rooftop Bar &amp; Restaurant</p>
-                </div>
-                <ExternalLink size={16} className="text-[#8B949E] mt-1 flex-shrink-0" />
-              </div>
-              <p className="text-sm text-[#8B949E] leading-relaxed">Rooftop dining and drinks with sweeping views of Canon City. Craft cocktails, elevated pub fare, and the best outdoor deck in the region.</p>
-              <div className="flex flex-wrap items-center gap-4 text-xs text-[#8B949E]">
-                <span className="flex items-center gap-1"><MapPin size={11} className="text-[#D4A853]" /> Canon City, CO — 45 min north</span>
-                <span className="flex items-center gap-1"><Phone size={11} className="text-[#D4A853]" /> 719-451-7241</span>
-              </div>
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* Day Trip Adventures */}
-      <section className="border-t" style={{ borderColor: '#30363D', backgroundColor: '#161B22' }}>
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
-          <div className="flex items-center gap-2 mb-1">
-            <Mountain size={14} className="text-[#D4A853]" />
-            <span className="text-xs font-bold uppercase tracking-widest" style={{ color: '#D4A853' }}>Day Trip Adventures</span>
-          </div>
-          <h2 className="text-2xl font-bold text-[#E6EDF3] mb-1">Royal Gorge Region — 45 Minutes Away</h2>
-          <p className="text-[#8B949E] mb-8">Combine great Pueblo dining with world-class outdoor adventure up the Arkansas River corridor.</p>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
-            <a
-              href="https://royalgorgerafting.net"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group flex flex-col gap-3 rounded-2xl border p-5 transition-all hover:border-[#D4A853]/60"
-              style={{ backgroundColor: '#0D1117', borderColor: '#30363D' }}
-            >
-              <Waves size={24} className="text-[#D4A853]" />
-              <p className="font-bold text-[#E6EDF3] group-hover:text-[#D4A853] transition-colors">Royal Gorge Rafting</p>
-              <p className="text-sm text-[#8B949E]">Class III-V whitewater on the Arkansas River through the Royal Gorge canyon.</p>
-              <p className="text-xs text-[#D4A853] flex items-center gap-1"><Phone size={10} /> 719-275-7238</p>
-            </a>
-            <a
-              href="https://royalgorgeziplinetours.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group flex flex-col gap-3 rounded-2xl border p-5 transition-all hover:border-[#D4A853]/60"
-              style={{ backgroundColor: '#0D1117', borderColor: '#30363D' }}
-            >
-              <Mountain size={24} className="text-[#D4A853]" />
-              <p className="font-bold text-[#E6EDF3] group-hover:text-[#D4A853] transition-colors">Royal Gorge Zipline Tours</p>
-              <p className="text-sm text-[#8B949E]">Soar above the Royal Gorge on Colorado&apos;s most breathtaking zipline experience.</p>
-              <p className="text-xs text-[#D4A853] flex items-center gap-1"><Phone size={10} /> 719-275-7238</p>
-            </a>
-            <a
-              href="https://royalgorgevacationrentals.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group flex flex-col gap-3 rounded-2xl border p-5 transition-all hover:border-[#D4A853]/60"
-              style={{ backgroundColor: '#0D1117', borderColor: '#30363D' }}
-            >
-              <Tent size={24} className="text-[#D4A853]" />
-              <p className="font-bold text-[#E6EDF3] group-hover:text-[#D4A853] transition-colors">Royal Gorge Vacation Rentals</p>
-              <p className="text-sm text-[#8B949E]">Yurts, Airstreams, and cabins in the Royal Gorge region. Stay the night.</p>
-              <p className="text-xs text-[#D4A853] flex items-center gap-1"><Phone size={10} /> 719-275-7238</p>
-            </a>
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10">
+          <div className="rounded-xl border p-5" style={{ backgroundColor: '#161B22', borderColor: '#30363D' }}>
+            <div className="flex items-center gap-2 mb-1">
+              <MapPin size={13} className="text-[#D4A853]" />
+              <span className="text-xs font-bold uppercase tracking-widest" style={{ color: '#D4A853' }}>45 Min North</span>
+            </div>
+            <h2 className="text-base font-bold text-[#E6EDF3] mb-1">Royal Gorge Region Day Trips</h2>
+            <p className="text-sm text-[#8B949E] mb-4">Pair great Pueblo dining with a day trip up the Arkansas River corridor — world-class rafting, ziplines, and dining in Canon City.</p>
+            <div className="flex flex-wrap gap-4">
+              <a href="https://whitewaterbar.com" target="_blank" rel="noopener noreferrer" className="text-xs font-semibold text-[#8B949E] hover:text-[#D4A853] transition-colors flex items-center gap-1"><ExternalLink size={11} />WhiteWater Bar &amp; Grill</a>
+              <a href="https://wwrooftopsocial.com" target="_blank" rel="noopener noreferrer" className="text-xs font-semibold text-[#8B949E] hover:text-[#D4A853] transition-colors flex items-center gap-1"><ExternalLink size={11} />Rooftop Social</a>
+              <a href="https://royalgorgerafting.net" target="_blank" rel="noopener noreferrer" className="text-xs font-semibold text-[#8B949E] hover:text-[#D4A853] transition-colors flex items-center gap-1"><ExternalLink size={11} />Royal Gorge Rafting</a>
+              <a href="https://royalgorgeziplinetours.com" target="_blank" rel="noopener noreferrer" className="text-xs font-semibold text-[#8B949E] hover:text-[#D4A853] transition-colors flex items-center gap-1"><ExternalLink size={11} />Royal Gorge Zipline Tours</a>
+              <a href="https://royalgorgevacationrentals.com" target="_blank" rel="noopener noreferrer" className="text-xs font-semibold text-[#8B949E] hover:text-[#D4A853] transition-colors flex items-center gap-1"><ExternalLink size={11} />Royal Gorge Vacation Rentals</a>
+            </div>
           </div>
         </div>
       </section>

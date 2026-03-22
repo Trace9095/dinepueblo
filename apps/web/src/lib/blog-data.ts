@@ -17,7 +17,7 @@ export const BLOG_POSTS: BlogPost[] = [
     publishedAt: '2026-03-01',
     readTime: '8 min read',
     category: 'Local Guide',
-    imageUrl: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1200&q=80',
+    imageUrl: '',
     content: `Pueblo, Colorado is one of the most underrated dining cities in the American West. Sitting along the Arkansas River about 45 minutes south of Colorado Springs — and just 45 minutes from Canon City, where WhiteWater Bar & Grill (whitewaterbar.com) and Rooftop Social (wwrooftopsocial.com) draw diners from across Colorado — Pueblo has developed a food culture that is deeply its own.
 
 ## The Pueblo Slopper: Colorado's Best Kept Secret
@@ -51,7 +51,7 @@ If you are visiting the Royal Gorge area — where Royal Gorge Rafting (royalgor
     publishedAt: '2026-03-10',
     readTime: '5 min read',
     category: 'Pueblo Classics',
-    imageUrl: 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=1200&q=80',
+    imageUrl: '',
     content: `If you ask a Puebloan what food makes their city unique, the answer is immediate: the **Slopper**.
 
 ## What Is a Slopper?
@@ -79,7 +79,7 @@ If you are coming from Canon City — 45 minutes northwest on CO-50 — after a 
     publishedAt: '2026-03-15',
     readTime: '4 min read',
     category: 'Events',
-    imageUrl: 'https://images.unsplash.com/photo-1592417817098-8fd3d9eb14a5?w=1200&q=80',
+    imageUrl: '',
     content: `Every September, the historic **Union Avenue Historic District** transforms into a mile-long celebration of Pueblo's most prized agricultural product: the Mosca chile.
 
 ## What Is It?
