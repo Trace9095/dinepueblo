@@ -44,7 +44,9 @@ function filterRestaurants(restaurants: Restaurant[], params: { q?: string; cuis
 
 export default async function RestaurantsPage({ searchParams }: PageProps) {
   const params = await searchParams
-  const [allRestaurants, categories] = await Promise.all([getAllRestaurants(), getAllCategories()])
+  const [restaurantsResult, categoriesResult] = await Promise.allSettled([getAllRestaurants(), getAllCategories()])
+  const allRestaurants = restaurantsResult.status === 'fulfilled' ? restaurantsResult.value : []
+  const categories = categoriesResult.status === 'fulfilled' ? categoriesResult.value : []
 
   const cuisines = [...new Set(allRestaurants.map(r => r.cuisine).filter(Boolean) as string[])].sort()
   const neighborhoods = [...new Set(allRestaurants.map(r => r.neighborhood).filter(Boolean) as string[])].sort()

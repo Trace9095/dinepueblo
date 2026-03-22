@@ -33,11 +33,13 @@ const CATEGORY_ICONS: Record<string, React.ReactNode> = {
 }
 
 export default async function HomePage() {
-  const [featured, categories, posts] = await Promise.all([
+  const [featuredResult, categoriesResult] = await Promise.allSettled([
     getFeaturedRestaurants(),
     getAllCategories(),
-    Promise.resolve(getAllPosts().slice(0, 3)),
   ])
+  const featured = featuredResult.status === 'fulfilled' ? featuredResult.value : []
+  const categories = categoriesResult.status === 'fulfilled' ? categoriesResult.value : []
+  const posts = getAllPosts().slice(0, 3)
 
   return (
     <div>
