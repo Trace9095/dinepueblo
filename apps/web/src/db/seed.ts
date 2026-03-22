@@ -1,6 +1,7 @@
 import 'dotenv/config'
 import { neon } from '@neondatabase/serverless'
 import { drizzle } from 'drizzle-orm/neon-http'
+import { sql as drizzleSql } from 'drizzle-orm'
 import * as schema from './schema'
 import bcrypt from 'bcryptjs'
 
@@ -55,7 +56,7 @@ async function seed() {
       hours: JSON.stringify({ mon: 'Closed', tue: '11am-9pm', wed: '11am-9pm', thu: '11am-9pm', fri: '11am-10pm', sat: '11am-10pm', sun: '11am-8pm' }),
       rating: 4.6,
       reviewCount: 842,
-      imageUrl: 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=800&q=80',
+      imageUrl: '/images/restaurants/burger-food.webp',
       featured: true,
       isPremium: false,
       specialties: 'Pueblo Slopper, Green Chile Cheeseburger',
@@ -74,7 +75,7 @@ async function seed() {
       hours: JSON.stringify({ mon: '11am-9pm', tue: '11am-9pm', wed: '11am-9pm', thu: '11am-9pm', fri: '11am-10pm', sat: '11am-10pm', sun: '11am-8pm' }),
       rating: 4.5,
       reviewCount: 621,
-      imageUrl: 'https://images.unsplash.com/photo-1550547660-d9450f859349?w=800&q=80',
+      imageUrl: '/images/restaurants/bar-interior.jpg',
       featured: true,
       isPremium: false,
       specialties: 'Pueblo Slopper, Green Chile',
@@ -93,7 +94,7 @@ async function seed() {
       hours: JSON.stringify({ mon: 'Closed', tue: '11am-9pm', wed: '11am-9pm', thu: '11am-9pm', fri: '11am-10pm', sat: '4pm-10pm', sun: '11am-8pm' }),
       rating: 4.7,
       reviewCount: 1204,
-      imageUrl: 'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800&q=80',
+      imageUrl: '/images/restaurants/italian-food.webp',
       featured: true,
       isPremium: true,
       specialties: 'Lasagna, Homemade Ravioli, Meat Sauce, Spumoni',
@@ -112,7 +113,7 @@ async function seed() {
       hours: JSON.stringify({ mon: 'Closed', tue: '3pm-10pm', wed: '3pm-10pm', thu: '3pm-10pm', fri: '12pm-11pm', sat: '12pm-11pm', sun: '12pm-9pm' }),
       rating: 4.5,
       reviewCount: 567,
-      imageUrl: 'https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=800&q=80',
+      imageUrl: '/images/restaurants/brewery-cocktail.jpg',
       featured: true,
       isPremium: true,
       specialties: 'House IPAs, Lagers, Green Chile Poutine',
@@ -131,7 +132,7 @@ async function seed() {
       hours: JSON.stringify({ mon: '11am-10pm', tue: '11am-10pm', wed: '11am-10pm', thu: '11am-11pm', fri: '11am-12am', sat: '11am-12am', sun: '11am-9pm' }),
       rating: 4.6,
       reviewCount: 892,
-      imageUrl: 'https://images.unsplash.com/photo-1567446537708-ac4aa75c9c28?w=800&q=80',
+      imageUrl: '/images/restaurants/patio-dining.jpg',
       featured: true,
       isPremium: true,
       specialties: 'Smash Burgers, 30+ Craft Taps, Green Chile Mac',
@@ -150,7 +151,7 @@ async function seed() {
       hours: JSON.stringify({ mon: 'Closed', tue: 'Closed', wed: '5pm-9pm', thu: '5pm-9pm', fri: '5pm-10pm', sat: '5pm-10pm', sun: '5pm-9pm' }),
       rating: 4.5,
       reviewCount: 743,
-      imageUrl: 'https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?w=800&q=80',
+      imageUrl: '/images/restaurants/fine-dining-wine.webp',
       featured: false,
       isPremium: false,
       specialties: 'USDA Prime Steaks, Whisky Selection, Panoramic Views',
@@ -169,7 +170,7 @@ async function seed() {
       hours: JSON.stringify({ mon: 'Closed', tue: '10am-8pm', wed: '10am-8pm', thu: '10am-8pm', fri: '10am-9pm', sat: '9am-9pm', sun: '9am-7pm' }),
       rating: 4.6,
       reviewCount: 521,
-      imageUrl: 'https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?w=800&q=80',
+      imageUrl: '/images/restaurants/mexican-food.webp',
       featured: false,
       isPremium: false,
       specialties: 'Tamales, Red Chile Enchiladas, Menudo, Breakfast Burritos',
@@ -188,7 +189,7 @@ async function seed() {
       hours: JSON.stringify({ mon: '8am-2pm', tue: '8am-2pm', wed: '8am-2pm', thu: '8am-2pm', fri: '8am-3pm', sat: '8am-3pm', sun: 'Closed' }),
       rating: 4.4,
       reviewCount: 398,
-      imageUrl: 'https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=800&q=80',
+      imageUrl: '/images/restaurants/margaritas.jpg',
       featured: false,
       isPremium: false,
       specialties: 'Green Chile Breakfast Burrito, Combo Plates',
@@ -207,7 +208,7 @@ async function seed() {
       hours: JSON.stringify({ mon: 'Closed', tue: 'Closed', wed: '5pm-9pm', thu: '5pm-9pm', fri: '5pm-10pm', sat: '5pm-10pm', sun: 'Closed' }),
       rating: 4.7,
       reviewCount: 456,
-      imageUrl: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80',
+      imageUrl: '/images/restaurants/cocktails.webp',
       featured: false,
       isPremium: false,
       specialties: 'Elk Tenderloin, Pan-Seared Trout, Curated Wine List',
@@ -226,7 +227,7 @@ async function seed() {
       hours: JSON.stringify({ mon: '11am-9pm', tue: '11am-9pm', wed: '11am-9pm', thu: '11am-9pm', fri: '11am-10pm', sat: '11am-10pm', sun: '12pm-9pm' }),
       rating: 4.5,
       reviewCount: 784,
-      imageUrl: 'https://images.unsplash.com/photo-1604382354936-07c5d9983bd3?w=800&q=80',
+      imageUrl: '/images/restaurants/nachos-appetizer.jpg',
       featured: false,
       isPremium: false,
       specialties: 'New York Slices, Green Chile White Pizza, Calzones',
@@ -246,7 +247,7 @@ async function seed() {
       hours: JSON.stringify({ mon: '6am-2pm', tue: '6am-2pm', wed: '6am-2pm', thu: '6am-2pm', fri: '6am-2pm', sat: '7am-2pm', sun: 'Closed' }),
       rating: 4.3,
       reviewCount: 287,
-      imageUrl: 'https://images.unsplash.com/photo-1567521464027-f127ff144326?w=800&q=80',
+      imageUrl: '/images/restaurants/diner-food.webp',
       featured: false,
       isPremium: false,
       specialties: 'Green Chile Omelette, Breakfast Plates, Green Chile',
@@ -266,7 +267,7 @@ async function seed() {
       hours: JSON.stringify({ mon: '7am-3pm', tue: '7am-3pm', wed: '7am-3pm', thu: '7am-3pm', fri: '7am-4pm', sat: '8am-4pm', sun: '8am-2pm' }),
       rating: 4.6,
       reviewCount: 389,
-      imageUrl: 'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800&q=80',
+      imageUrl: '/images/restaurants/bakery-food.webp',
       featured: false,
       isPremium: false,
       specialties: 'Fresh Croissants, Sourdough, Seasonal Tarts, Specialty Lattes',
@@ -285,14 +286,19 @@ async function seed() {
       hours: JSON.stringify({ mon: '7am-9pm', tue: '7am-9pm', wed: '7am-9pm', thu: '7am-9pm', fri: '7am-10pm', sat: '7am-10pm', sun: '7am-9pm' }),
       rating: 4.2,
       reviewCount: 418,
-      imageUrl: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&q=80',
+      imageUrl: '/images/restaurants/outdoor-dining.jpg',
       featured: false,
       isPremium: false,
       specialties: 'Prime Rib, Colorado Trout, Green Chile Stew, Riverside Patio',
     },
   ]
 
-  const insertedRestaurants = await db.insert(schema.restaurants).values(restaurantData).onConflictDoNothing().returning()
+  const insertedRestaurants = await db.insert(schema.restaurants).values(restaurantData)
+    .onConflictDoUpdate({
+      target: schema.restaurants.slug,
+      set: { imageUrl: drizzleSql<string>`excluded.image_url` },
+    })
+    .returning()
   console.log(`${insertedRestaurants.length} restaurants seeded`)
 
   const allRestaurants = await db.select().from(schema.restaurants)

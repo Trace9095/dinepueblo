@@ -1,7 +1,20 @@
 import Link from 'next/link'
-import { Star, MapPin, DollarSign, Award } from 'lucide-react'
+import { Star, MapPin, Award } from 'lucide-react'
 import type { Restaurant } from '@/db/schema'
 import { cn } from '@/lib/utils'
+
+function getCategoryGradient(cuisine: string | null): string {
+  const c = (cuisine ?? '').toLowerCase()
+  if (c.includes('italian') || c.includes('pizza')) return 'linear-gradient(135deg, #7C1D1D 0%, #C0392B 50%, #922B21 100%)'
+  if (c.includes('mexican') || c.includes('new mexican')) return 'linear-gradient(135deg, #145A32 0%, #1E8449 50%, #D4AC0D 100%)'
+  if (c.includes('brew') || c.includes('craft')) return 'linear-gradient(135deg, #7D4E00 0%, #B7770D 50%, #5D4037 100%)'
+  if (c.includes('fine dining') || c.includes('steakhouse') || c.includes('french')) return 'linear-gradient(135deg, #1a1205 0%, #D4A853 50%, #0D1117 100%)'
+  if (c.includes('bbq') || c.includes('smokehouse')) return 'linear-gradient(135deg, #4A1C0A 0%, #B03A0A 50%, #7B2D00 100%)'
+  if (c.includes('bakery') || c.includes('coffee')) return 'linear-gradient(135deg, #4B2E0A 0%, #8B5E3C 50%, #C69C6D 100%)'
+  if (c.includes('riverwalk') || c.includes('river')) return 'linear-gradient(135deg, #0D3B4F 0%, #1A6B8A 50%, #0A4A6B 100%)'
+  if (c.includes('diner') || c.includes('american')) return 'linear-gradient(135deg, #1a0a00 0%, #B8860B 50%, #8B4513 100%)'
+  return 'linear-gradient(135deg, #161B22 0%, #D4A853 50%, #0D1117 100%)'
+}
 
 interface RestaurantCardProps {
   restaurant: Restaurant
@@ -18,20 +31,18 @@ export function RestaurantCard({ restaurant, className }: RestaurantCardProps) {
       )}
       style={{ backgroundColor: '#161B22', borderColor: '#30363D' }}
     >
-      {/* Image */}
-      <div className="relative h-48 overflow-hidden bg-[#21262D]">
-        {restaurant.imageUrl ? (
-          <img
-            src={restaurant.imageUrl}
-            alt={restaurant.name}
-            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-            loading="lazy"
-          />
-        ) : (
-          <div className="w-full h-full flex items-center justify-center text-[#30363D]">
-            <DollarSign size={40} />
-          </div>
-        )}
+      {/* Image — CSS gradient as fallback layer; image renders on top if it loads */}
+      <div className="relative h-48 overflow-hidden">
+        <div
+          className="absolute inset-0 transition-transform duration-500 group-hover:scale-105"
+          style={{
+            backgroundImage: restaurant.imageUrl
+              ? `url(${restaurant.imageUrl}), ${getCategoryGradient(restaurant.cuisine)}`
+              : getCategoryGradient(restaurant.cuisine),
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+          }}
+        />
         {/* Badges */}
         <div className="absolute top-3 left-3 flex gap-2">
           {restaurant.isPremium && (
