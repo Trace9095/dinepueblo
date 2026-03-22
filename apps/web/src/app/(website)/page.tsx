@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { MapPin, ArrowRight, Flame, Beer, UtensilsCrossed, Sunrise, Trophy } from 'lucide-react'
+import { MapPin, ArrowRight, Flame, Beer, UtensilsCrossed, Sunrise, Trophy, Phone, ExternalLink, Mountain, Waves, Tent } from 'lucide-react'
 import { getFeaturedRestaurants, getAllCategories } from '@/lib/db-helpers'
 
 export const dynamic = 'force-dynamic'
@@ -150,27 +150,123 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* CTA Banner */}
+      {/* Featured Partner Dining — Canon City */}
+      <section className="border-t" style={{ borderColor: '#30363D' }}>
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
+          <div className="flex items-center gap-2 mb-1">
+            <MapPin size={14} className="text-[#D4A853]" />
+            <span className="text-xs font-bold uppercase tracking-widest" style={{ color: '#D4A853' }}>Featured Partners</span>
+          </div>
+          <h2 className="text-2xl font-bold text-[#E6EDF3] mb-1">Dining 45 Minutes North — Canon City, CO</h2>
+          <p className="text-[#8B949E] mb-8">Two iconic restaurants just up the highway. Worth the drive.</p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            <a
+              href="https://whitewaterbar.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex flex-col gap-3 rounded-2xl border p-6 transition-all hover:border-[#D4A853]/60"
+              style={{ backgroundColor: '#161B22', borderColor: '#30363D' }}
+            >
+              <div className="flex items-start justify-between">
+                <div>
+                  <p className="text-lg font-bold text-[#E6EDF3] group-hover:text-[#D4A853] transition-colors">WhiteWater Bar &amp; Grill</p>
+                  <p className="text-sm text-[#D4A853] mt-0.5">Undefeated Flavors. Legendary Portions.</p>
+                </div>
+                <ExternalLink size={16} className="text-[#8B949E] mt-1 flex-shrink-0" />
+              </div>
+              <p className="text-sm text-[#8B949E] leading-relaxed">Downtown Canon City&apos;s premier dining destination. Green chile, craft burgers, and Colorado-inspired dishes served in a lively atmosphere.</p>
+              <div className="flex flex-wrap items-center gap-4 text-xs text-[#8B949E]">
+                <span className="flex items-center gap-1"><MapPin size={11} className="text-[#D4A853]" /> Canon City, CO — 45 min north</span>
+                <span className="flex items-center gap-1"><Phone size={11} className="text-[#D4A853]" /> 719-451-7241</span>
+              </div>
+            </a>
+            <a
+              href="https://wwrooftopsocial.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex flex-col gap-3 rounded-2xl border p-6 transition-all hover:border-[#D4A853]/60"
+              style={{ backgroundColor: '#161B22', borderColor: '#30363D' }}
+            >
+              <div className="flex items-start justify-between">
+                <div>
+                  <p className="text-lg font-bold text-[#E6EDF3] group-hover:text-[#D4A853] transition-colors">Rooftop Social</p>
+                  <p className="text-sm text-[#D4A853] mt-0.5">Canon City&apos;s Rooftop Bar &amp; Restaurant</p>
+                </div>
+                <ExternalLink size={16} className="text-[#8B949E] mt-1 flex-shrink-0" />
+              </div>
+              <p className="text-sm text-[#8B949E] leading-relaxed">Rooftop dining and drinks with sweeping views of Canon City. Craft cocktails, elevated pub fare, and the best outdoor deck in the region.</p>
+              <div className="flex flex-wrap items-center gap-4 text-xs text-[#8B949E]">
+                <span className="flex items-center gap-1"><MapPin size={11} className="text-[#D4A853]" /> Canon City, CO — 45 min north</span>
+                <span className="flex items-center gap-1"><Phone size={11} className="text-[#D4A853]" /> 719-451-7241</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Day Trip Adventures */}
       <section className="border-t" style={{ borderColor: '#30363D', backgroundColor: '#161B22' }}>
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
+          <div className="flex items-center gap-2 mb-1">
+            <Mountain size={14} className="text-[#D4A853]" />
+            <span className="text-xs font-bold uppercase tracking-widest" style={{ color: '#D4A853' }}>Day Trip Adventures</span>
+          </div>
+          <h2 className="text-2xl font-bold text-[#E6EDF3] mb-1">Royal Gorge Region — 45 Minutes Away</h2>
+          <p className="text-[#8B949E] mb-8">Combine great Pueblo dining with world-class outdoor adventure up the Arkansas River corridor.</p>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
+            <a
+              href="https://royalgorgerafting.net"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex flex-col gap-3 rounded-2xl border p-5 transition-all hover:border-[#D4A853]/60"
+              style={{ backgroundColor: '#0D1117', borderColor: '#30363D' }}
+            >
+              <Waves size={24} className="text-[#D4A853]" />
+              <p className="font-bold text-[#E6EDF3] group-hover:text-[#D4A853] transition-colors">Royal Gorge Rafting</p>
+              <p className="text-sm text-[#8B949E]">Class III-V whitewater on the Arkansas River through the Royal Gorge canyon.</p>
+              <p className="text-xs text-[#D4A853] flex items-center gap-1"><Phone size={10} /> 719-275-7238</p>
+            </a>
+            <a
+              href="https://royalgorgeziplinetours.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex flex-col gap-3 rounded-2xl border p-5 transition-all hover:border-[#D4A853]/60"
+              style={{ backgroundColor: '#0D1117', borderColor: '#30363D' }}
+            >
+              <Mountain size={24} className="text-[#D4A853]" />
+              <p className="font-bold text-[#E6EDF3] group-hover:text-[#D4A853] transition-colors">Royal Gorge Zipline Tours</p>
+              <p className="text-sm text-[#8B949E]">Soar above the Royal Gorge on Colorado&apos;s most breathtaking zipline experience.</p>
+              <p className="text-xs text-[#D4A853] flex items-center gap-1"><Phone size={10} /> 719-275-7238</p>
+            </a>
+            <a
+              href="https://royalgorgevacationrentals.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex flex-col gap-3 rounded-2xl border p-5 transition-all hover:border-[#D4A853]/60"
+              style={{ backgroundColor: '#0D1117', borderColor: '#30363D' }}
+            >
+              <Tent size={24} className="text-[#D4A853]" />
+              <p className="font-bold text-[#E6EDF3] group-hover:text-[#D4A853] transition-colors">Royal Gorge Vacation Rentals</p>
+              <p className="text-sm text-[#8B949E]">Yurts, Airstreams, and cabins in the Royal Gorge region. Stay the night.</p>
+              <p className="text-xs text-[#D4A853] flex items-center gap-1"><Phone size={10} /> 719-275-7238</p>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Banner */}
+      <section className="border-t" style={{ borderColor: '#30363D', backgroundColor: '#0D1117' }}>
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 text-center">
           <h2 className="text-2xl sm:text-3xl font-bold text-[#E6EDF3] mb-3">Own a Pueblo Restaurant?</h2>
-          <p className="text-[#8B949E] mb-8 max-w-lg mx-auto">Claim your listing or get added to Pueblo&apos;s top dining directory starting at $99/year.</p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="/pricing"
-              className="flex items-center justify-center gap-2 rounded-xl px-6 py-4 text-base font-semibold min-h-[52px] transition-all hover:scale-105"
-              style={{ backgroundColor: '#D4A853', color: '#0D1117' }}
-            >
-              View Listing Plans
-            </Link>
-            <Link
-              href="/request-listing"
-              className="flex items-center justify-center gap-2 rounded-xl px-6 py-4 text-base font-medium border min-h-[52px] transition-colors"
-              style={{ borderColor: '#30363D', color: '#E6EDF3' }}
-            >
-              Request a Free Listing
-            </Link>
-          </div>
+          <p className="text-[#8B949E] mb-8 max-w-lg mx-auto">Claim your listing on Pueblo&apos;s top dining directory. Plans start at $99/year.</p>
+          <Link
+            href="/pricing"
+            className="inline-flex items-center justify-center gap-2 rounded-xl px-8 py-4 text-base font-semibold min-h-[52px] transition-all hover:scale-105"
+            style={{ backgroundColor: '#D4A853', color: '#0D1117' }}
+          >
+            View Listing Plans
+            <ArrowRight size={18} />
+          </Link>
         </div>
       </section>
     </div>

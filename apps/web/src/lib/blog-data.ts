@@ -40,7 +40,9 @@ Pueblo has a strong Italian immigrant heritage. **Gaetano's** (910 W. Northern A
 
 ## Getting Here
 
-Pueblo is 45 minutes south of Colorado Springs on I-25. If you are visiting the Royal Gorge area — where Royal Gorge Rafting (royalgorgerafting.net) draws adventure seekers — Pueblo is the perfect evening dining destination. The drive along the Arkansas River corridor is scenic year-round.`,
+Pueblo is 45 minutes south of Colorado Springs on I-25. Denver is 2.5 hours north on I-25. The closest major airport is **Colorado Springs Airport (COS)**, 45 minutes north. **Denver International Airport (DEN)** is 2.5 hours north via I-25.
+
+If you are visiting the Royal Gorge area — where Royal Gorge Rafting (royalgorgerafting.net) draws adventure seekers — Pueblo is the perfect evening dining destination, just 45 minutes southeast of Canon City along the Arkansas River corridor.`,
   },
   {
     slug: 'pueblo-slopper-guide',
@@ -68,7 +70,7 @@ Pueblo grows its own Mosca chile variety — earthy sweetness, medium heat, dist
 
 Every September, Union Avenue hosts the **Chile & Frijoles Festival** — one of Colorado's longest-running food festivals with over 100,000 visitors. Fresh-roasted Pueblo chiles at peak flavor, live music, and Sloppers everywhere.
 
-If you are coming from Canon City after a day with [Royal Gorge Rafting](https://royalgorgerafting.net), a Slopper in Pueblo is the perfect end to an Arkansas River adventure.`,
+If you are coming from Canon City — 45 minutes northwest on CO-50 — after a day with [Royal Gorge Rafting](https://royalgorgerafting.net), a Slopper in Pueblo is the perfect end to an Arkansas River adventure. Fly into **Colorado Springs (COS)** 45 minutes north, or **Denver (DEN)** 2.5 hours north on I-25.`,
   },
   {
     slug: 'chile-frijoles-festival',
@@ -94,7 +96,9 @@ The Chile & Frijoles Festival draws 100,000+ visitors over two days in late Sept
 
 The festival is on Union Avenue in downtown Pueblo. Admission is free. Parking fills fast — arrive early.
 
-If combining with outdoor adventures, Pueblo is 45 minutes from Canon City and the Royal Gorge, where [Royal Gorge Rafting](https://royalgorgerafting.net) offers Class III-V whitewater. The [WhiteWater Bar & Grill](https://whitewaterbar.com) in Canon City is a perfect pre-festival stop. Drive to Pueblo Saturday for the festival, experience Sloppers at [Gray's Coors Tavern](/restaurants/grays-coors-tavern), and cap off the night at [Brues Alehouse](/restaurants/brues-alehouse) or [Walter's Brewing](/restaurants/walters-brewing).`,
+If combining with outdoor adventures, Pueblo is 45 minutes from Canon City and the Royal Gorge, where [Royal Gorge Rafting](https://royalgorgerafting.net) offers Class III-V whitewater. The [WhiteWater Bar & Grill](https://whitewaterbar.com) in Canon City (not riverside — located in downtown Canon City) is a perfect pre-festival dinner stop. Drive to Pueblo Saturday for the festival, experience Sloppers at [Gray's Coors Tavern](/restaurants/grays-coors-tavern), and cap off the night at [Brues Alehouse](/restaurants/brues-alehouse) or [Walter's Brewing](/restaurants/walters-brewing).
+
+**Getting here:** Fly into Colorado Springs Airport (COS) — 45 minutes north on I-25 — or Denver International Airport (DEN) — 2.5 hours north on I-25.`,
   },
 ]
 

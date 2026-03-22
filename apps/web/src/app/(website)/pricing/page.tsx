@@ -87,14 +87,8 @@ export default function PricingPage() {
       </div>
 
       <div className="text-center mt-12">
-        <p className="text-[#8B949E] mb-4">Restaurant not listed yet?</p>
-        <Link
-          href="/request-listing"
-          className="inline-flex items-center gap-2 rounded-xl px-6 py-3 text-sm font-medium border transition-colors min-h-[44px]"
-          style={{ borderColor: '#30363D', color: '#E6EDF3' }}
-        >
-          Request a Free Listing
-        </Link>
+        <p className="text-[#8B949E] mb-2">Restaurant not listed yet?</p>
+        <p className="text-sm text-[#8B949E] mb-4">Find your restaurant above, then claim it — or <a href="mailto:CEO@epicai.ai" className="text-[#D4A853] hover:underline">contact us</a> to get added.</p>
       </div>
     </div>
   )

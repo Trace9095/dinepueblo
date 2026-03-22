@@ -17,7 +17,7 @@ const QUICK_LINKS = [
   { href: '/restaurants', label: 'All Restaurants' },
   { href: '/blog', label: 'Blog' },
   { href: '/pricing', label: 'List Your Restaurant' },
-  { href: '/request-listing', label: 'Request a Listing' },
+  { href: '/manage', label: 'Manage My Listing' },
 ]
 
 const SISTER_SITES = [
@@ -93,7 +93,7 @@ export function Footer() {
           {/* Get Listed */}
           <div>
             <h3 className="text-sm font-semibold text-[#E6EDF3] uppercase tracking-wider mb-4">Own a Restaurant?</h3>
-            <p className="text-sm text-[#8B949E] mb-4">Claim your listing or get added to Pueblo's top dining directory.</p>
+            <p className="text-sm text-[#8B949E] mb-4">Get your Pueblo restaurant in front of local diners and visitors. Plans from $99/year.</p>
             <Link
               href="/pricing"
               className="block text-center rounded-lg px-4 py-3 text-sm font-semibold transition-colors min-h-[44px] flex items-center justify-center"
@@ -102,11 +102,11 @@ export function Footer() {
               View Listing Plans
             </Link>
             <Link
-              href="/request-listing"
+              href="/manage"
               className="block text-center rounded-lg px-4 py-3 text-sm font-medium transition-colors mt-2 border min-h-[44px] flex items-center justify-center"
               style={{ borderColor: '#30363D', color: '#8B949E' }}
             >
-              Request a Listing
+              Manage My Listing
             </Link>
           </div>
         </div>
@@ -120,8 +120,8 @@ export function Footer() {
           </p>
           <div className="flex items-center gap-6 text-sm text-[#8B949E]">
             <Link href="/blog" className="hover:text-[#D4A853] transition-colors">Blog</Link>
-            <Link href="/request-listing" className="hover:text-[#D4A853] transition-colors">Add Restaurant</Link>
-            <Link href="/pricing" className="hover:text-[#D4A853] transition-colors">Advertise</Link>
+            <Link href="/manage" className="hover:text-[#D4A853] transition-colors">Manage Listing</Link>
+            <Link href="/pricing" className="hover:text-[#D4A853] transition-colors">List Your Restaurant</Link>
           </div>
         </div>
       </div>

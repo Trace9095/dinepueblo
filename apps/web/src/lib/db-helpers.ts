@@ -1,4 +1,4 @@
-import { db, restaurants, categories, restaurantCategories } from '@/db'
+import { db, restaurants, categories, restaurantCategories, claims } from '@/db'
 import { eq, desc, inArray } from 'drizzle-orm'
 import { unstable_cache } from 'next/cache'
 
@@ -50,6 +50,26 @@ export const getRestaurantsByCategory = unstable_cache(
   ['restaurants-by-category'],
   { revalidate: 3600, tags: ['restaurants', 'categories'] }
 )
+
+// Not cached — sensitive lookup, always fresh
+export async function getClaimsByEmail(email: string) {
+  return db
+    .select({
+      id: claims.id,
+      restaurantId: claims.restaurantId,
+      restaurantName: claims.restaurantName,
+      restaurantSlug: restaurants.slug,
+      contactName: claims.contactName,
+      contactEmail: claims.contactEmail,
+      tier: claims.tier,
+      status: claims.status,
+      paidAt: claims.paidAt,
+      createdAt: claims.createdAt,
+    })
+    .from(claims)
+    .leftJoin(restaurants, eq(claims.restaurantId, restaurants.id))
+    .where(eq(claims.contactEmail, email.toLowerCase().trim()))
+}
 
 export const getRestaurantCategories = unstable_cache(
   async (restaurantId: string) => {
