@@ -29,13 +29,13 @@ export const CLAIM_TIERS = {
   basic: {
     name: 'Basic Listing',
     price: 9900,
-    priceDisplay: '$99/year',
+    priceDisplay: '$99/mo',
     features: ['Verified owner badge', 'Update hours & info', 'Add up to 10 photos', 'Direct contact button'],
   },
   premium: {
     name: 'Premium Listing',
     price: 19900,
-    priceDisplay: '$199/year',
+    priceDisplay: '$199/mo',
     features: ['Everything in Basic', 'Featured placement', 'Homepage featured slot', 'Promotional banner', 'Menu showcase', 'Priority support'],
   },
 } as const

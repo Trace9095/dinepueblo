@@ -100,7 +100,7 @@ export default async function ManagePage({ searchParams }: PageProps) {
               <p className="text-sm text-[#8B949E] mb-2">{claims.length} listing{claims.length !== 1 ? 's' : ''} found for <span className="text-[#E6EDF3]">{email}</span></p>
               {claims.map(claim => {
                 const renewalDate = claim.paidAt
-                  ? new Date(new Date(claim.paidAt).setFullYear(new Date(claim.paidAt).getFullYear() + 1)).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })
+                  ? new Date(new Date(claim.paidAt).setMonth(new Date(claim.paidAt).getMonth() + 1)).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })
                   : null
                 const isPremium = claim.tier === 'premium'
 
@@ -126,7 +126,7 @@ export default async function ManagePage({ searchParams }: PageProps) {
                           : <Zap size={15} className="text-[#8B949E]" />
                         }
                         <span className="text-sm font-semibold text-[#E6EDF3]">
-                          {isPremium ? 'Premium Listing' : 'Basic Listing'} — {isPremium ? '$199/year' : '$99/year'}
+                          {isPremium ? 'Premium Listing' : 'Basic Listing'} — {isPremium ? '$199/mo' : '$99/mo'}
                         </span>
                       </div>
                       {renewalDate && (
@@ -152,7 +152,7 @@ export default async function ManagePage({ searchParams }: PageProps) {
                           style={{ backgroundColor: '#D4A853', color: '#0D1117' }}
                         >
                           <Star size={14} />
-                          Upgrade to Premium ($199/yr)
+                          Upgrade to Premium ($199/mo)
                         </Link>
                       )}
                     </div>
@@ -187,7 +187,7 @@ export default async function ManagePage({ searchParams }: PageProps) {
               className="inline-flex items-center gap-2 rounded-xl px-6 py-3 text-sm font-semibold min-h-[44px] transition-all hover:scale-105"
               style={{ backgroundColor: '#D4A853', color: '#0D1117' }}
             >
-              View Plans — from $99/year
+              View Plans — from $99/mo
               <ArrowRight size={14} />
             </Link>
           </div>

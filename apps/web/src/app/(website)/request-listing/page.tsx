@@ -45,10 +45,10 @@ export default function RequestListingPage() {
     <div className="mx-auto max-w-xl px-4 sm:px-6 py-12">
       <div className="flex items-center gap-2 mb-2">
         <MapPin size={18} className="text-[#D4A853]" />
-        <span className="text-sm text-[#D4A853] font-medium">Free Listing</span>
+        <span className="text-sm text-[#D4A853] font-medium">Request a Listing</span>
       </div>
       <h1 className="text-3xl font-bold text-[#E6EDF3] mb-3">Don&apos;t See Your Restaurant?</h1>
-      <p className="text-[#8B949E] mb-8">Submit a request and we&apos;ll add it to Dine Pueblo. Basic listings are free — upgrade anytime for premium placement.</p>
+      <p className="text-[#8B949E] mb-8">Submit a request and we&apos;ll add it to Dine Pueblo. Basic listings start at $99/mo — upgrade to Premium for $199/mo with featured placement.</p>
 
       <form onSubmit={handleSubmit} className="space-y-4 rounded-xl p-6 border" style={{ backgroundColor: '#161B22', borderColor: '#30363D' }}>
         {error && <p className="text-sm text-[#F85149] p-3 rounded-lg" style={{ backgroundColor: '#F8514910' }}>{error}</p>}

@@ -5,7 +5,7 @@ import { CLAIM_TIERS } from '@/lib/stripe'
 
 export const metadata: Metadata = {
   title: 'List Your Pueblo Restaurant — Pricing',
-  description: 'Get your Pueblo restaurant listed on Dine Pueblo. Basic listings from $99/year. Premium placement and featured spots from $199/year.',
+  description: 'Get your Pueblo restaurant listed on Dine Pueblo. Basic listings from $99/mo. Premium placement and featured spots from $199/mo.',
   alternates: { canonical: 'https://dinepueblo.com/pricing' },
   openGraph: { title: 'Restaurant Listing Pricing | Dine Pueblo', url: 'https://dinepueblo.com/pricing', images: [{ url: '/opengraph-image', width: 1200, height: 630 }] },
   twitter: { card: 'summary_large_image', title: 'Restaurant Listing Pricing | Dine Pueblo', images: ['/opengraph-image'] },
@@ -28,7 +28,7 @@ export default function PricingPage() {
           </div>
           <div className="mb-6">
             <span className="text-4xl font-bold text-[#E6EDF3]">$99</span>
-            <span className="text-[#8B949E] ml-1">/year</span>
+            <span className="text-[#8B949E] ml-1">/mo</span>
           </div>
           <ul className="space-y-3 mb-8">
             {CLAIM_TIERS.basic.features.map(f => (
@@ -65,7 +65,7 @@ export default function PricingPage() {
           </div>
           <div className="mb-6">
             <span className="text-4xl font-bold text-[#D4A853]">$199</span>
-            <span className="text-[#8B949E] ml-1">/year</span>
+            <span className="text-[#8B949E] ml-1">/mo</span>
           </div>
           <ul className="space-y-3 mb-8">
             {CLAIM_TIERS.premium.features.map(f => (

@@ -93,7 +93,7 @@ export function Footer() {
           {/* Get Listed */}
           <div>
             <h3 className="text-sm font-semibold text-[#E6EDF3] uppercase tracking-wider mb-4">Own a Restaurant?</h3>
-            <p className="text-sm text-[#8B949E] mb-4">Get your Pueblo restaurant in front of local diners and visitors. Plans from $99/year.</p>
+            <p className="text-sm text-[#8B949E] mb-4">Get your Pueblo restaurant in front of local diners and visitors. Plans from $99/mo.</p>
             <Link
               href="/pricing"
               className="block text-center rounded-lg px-4 py-3 text-sm font-semibold transition-colors min-h-[44px] flex items-center justify-center"

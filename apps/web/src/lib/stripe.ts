@@ -12,8 +12,8 @@ export function getStripe(): Stripe {
 }
 
 export const CLAIM_TIERS = {
-  basic: { name: 'Basic Listing', price: 9900, label: '$99/year', features: ['Verified owner badge', 'Update hours & info', 'Add up to 10 photos', 'Direct contact button'] },
-  premium: { name: 'Premium Listing', price: 19900, label: '$199/year', features: ['Everything in Basic', 'Featured placement in search', 'Homepage featured slot', 'Promotional banner', 'Menu showcase section', 'Priority support'] },
+  basic: { name: 'Basic Listing', price: 9900, label: '$99/mo', features: ['Verified owner badge', 'Update hours & info', 'Add up to 10 photos', 'Direct contact button'] },
+  premium: { name: 'Premium Listing', price: 19900, label: '$199/mo', features: ['Everything in Basic', 'Featured placement in search', 'Homepage featured slot', 'Promotional banner', 'Menu showcase section', 'Priority support'] },
 } as const
 
 export type ClaimTier = keyof typeof CLAIM_TIERS
@@ -30,7 +30,7 @@ export async function createClaimCheckout(opts: {
   const tier = CLAIM_TIERS[opts.tier]
   return stripe.checkout.sessions.create({
     payment_method_types: ['card'],
-    mode: 'payment',
+    mode: 'subscription',
     customer_email: opts.contactEmail,
     line_items: [{
       price_data: {
@@ -40,6 +40,7 @@ export async function createClaimCheckout(opts: {
           description: `DinePueblo listing for ${opts.restaurantName}`,
         },
         unit_amount: tier.price,
+        recurring: { interval: 'month' },
       },
       quantity: 1,
     }],

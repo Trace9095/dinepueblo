@@ -175,7 +175,7 @@ export default async function HomePage() {
       <section className="border-t" style={{ borderColor: '#30363D', backgroundColor: '#0D1117' }}>
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 text-center">
           <h2 className="text-2xl sm:text-3xl font-bold text-[#E6EDF3] mb-3">Own a Pueblo Restaurant?</h2>
-          <p className="text-[#8B949E] mb-8 max-w-lg mx-auto">Claim your listing on Pueblo&apos;s top dining directory. Plans start at $99/year.</p>
+          <p className="text-[#8B949E] mb-8 max-w-lg mx-auto">Claim your listing on Pueblo&apos;s top dining directory. Plans start at $99/mo.</p>
           <Link
             href="/pricing"
             className="inline-flex items-center justify-center gap-2 rounded-xl px-8 py-4 text-base font-semibold min-h-[52px] transition-all hover:scale-105"
