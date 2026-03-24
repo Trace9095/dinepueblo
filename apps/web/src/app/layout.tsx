@@ -54,7 +54,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         )}
       </head>
       <body>
-        {children}
+        <a href="#main-content" className="skip-to-content">
+          Skip to main content
+        </a>
+        <main id="main-content">{children}</main>
         <Analytics />
         <SpeedInsights />
       </body>
