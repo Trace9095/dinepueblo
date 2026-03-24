@@ -4,6 +4,7 @@ import { GeistMono } from 'geist/font/mono'
 import Script from 'next/script'
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
+import { CookieConsent } from '@/components/cookie-consent'
 import './globals.css'
 
 export const metadata: Metadata = {
@@ -60,6 +61,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <main id="main-content">{children}</main>
         <Analytics />
         <SpeedInsights />
+        <CookieConsent />
       </body>
     </html>
   )
