@@ -111,8 +111,20 @@ export function Footer() {
           </div>
         </div>
 
+        {/* Also Explore — Pueblo */}
+        <div className="pb-6 mt-12">
+          <p className="text-[#6B7280] text-xs uppercase tracking-wider font-medium mb-3">
+            Also Explore Pueblo
+          </p>
+          <div className="flex flex-wrap gap-x-6 gap-y-2">
+            <a href="https://visitpueblo.co" target="_blank" rel="noopener noreferrer" className="text-[#8B949E] text-sm hover:text-[#D4A853] transition-colors">
+              Visit Pueblo
+            </a>
+          </div>
+        </div>
+
         <div
-          className="mt-12 pt-8 border-t flex flex-col sm:flex-row items-center justify-between gap-4"
+          className="pt-8 border-t flex flex-col sm:flex-row items-center justify-between gap-4"
           style={{ borderColor: '#30363D' }}
         >
           <p className="text-sm text-[#8B949E]">
