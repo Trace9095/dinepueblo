@@ -2,26 +2,22 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import { hasConsentChoice, acceptAll, acceptEssentialOnly } from '@/lib/cookie-consent'
 
 export function CookieConsent() {
   const [show, setShow] = useState(false)
 
   useEffect(() => {
-    try {
-      const consent = localStorage.getItem('cookie-consent')
-      if (!consent) setShow(true)
-    } catch {
-      // localStorage unavailable
-    }
+    if (!hasConsentChoice()) setShow(true)
   }, [])
 
   function accept() {
-    try { localStorage.setItem('cookie-consent', 'accepted') } catch {}
+    acceptAll()
     setShow(false)
   }
 
   function decline() {
-    try { localStorage.setItem('cookie-consent', 'declined') } catch {}
+    acceptEssentialOnly()
     setShow(false)
   }
 
